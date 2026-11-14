@@ -7,7 +7,7 @@ using ExileCore.Shared.Cache;
 using ExileCore.Shared.Enums;
 using ExileCore.Shared.Helpers;
 using ExileCore.Shared.Nodes;
-using ImGuiNET;
+using Hexa.NET.ImGui;
 using SharpDX;
 using System;
 using System.Collections.Generic;
@@ -233,7 +233,7 @@ namespace SyndicateHelper
                 "UI Settings"
             };
 
-            if (ImGui.BeginChild("LeftSidebar", new Vector2(150, ImGui.GetContentRegionAvail().Y), ImGuiChildFlags.Border, ImGuiWindowFlags.None))
+            if (ImGui.BeginChild("LeftSidebar", new Vector2(150, ImGui.GetContentRegionAvail().Y), ImGuiChildFlags.Borders, ImGuiWindowFlags.None))
             {
                 for (var i = 0; i < settingTabs.Length; i++)
                 {
@@ -249,7 +249,7 @@ namespace SyndicateHelper
 
             ImGui.PushStyleVar(ImGuiStyleVar.ChildRounding, 5.0f);
             var contentRegionArea = ImGui.GetContentRegionAvail();
-            if (ImGui.BeginChild("RightPanel", contentRegionArea, ImGuiChildFlags.Border, ImGuiWindowFlags.None))
+            if (ImGui.BeginChild("RightPanel", contentRegionArea, ImGuiChildFlags.Borders, ImGuiWindowFlags.None))
             {
                 switch (settingTabs[_selectedSettingsTab])
                 {
